@@ -68,7 +68,14 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
     },
   },
-  rewards: {},
+  rewards: {
+    house: { id: 'house', title: 'house', listHadiths: ['house1'] },
+    tree: { id: 'tree', title: 'tree', listHadiths: ['tree1'] },
+    palm: { id: 'palm', title: 'palm', listHadiths: ['palm1'] },
+    hassanat: { id: 'hassanat', title: 'hassanat', listHadiths: ['hassanats1'] },
+    treasure: { id: 'treasure', title: 'treasure', listHadiths: ['treasure1'] },
+    quran: { id: 'quran', title: 'quran', listHadiths: ['quran1', 'quran2'] },
+  },
   counters: {
     house1: 0,
     tree1: 0,
