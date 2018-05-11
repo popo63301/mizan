@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import styled from 'styled-components';
 import HomePageList from '../containers/HomePageList';
 
@@ -11,9 +11,9 @@ import HomePageList from '../containers/HomePageList';
 // `;
 
 const HomePage = ({ navigation }) => (
-  <View>
+  <ScrollView>
     <HomePageList navigation={navigation} />
-  </View>
+  </ScrollView>
 );
 
 export default HomePage;
