@@ -47,7 +47,7 @@ class HomePageListItem extends Component {
     if (hadith.emoji) {
       return <EmojiContainer>{hadith.emoji}</EmojiContainer>;
     }
-    return <Text>''</Text>;
+    return null;
   };
 
   render() {
