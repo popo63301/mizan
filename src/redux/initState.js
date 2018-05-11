@@ -8,6 +8,7 @@ const initState = {
 (Rapporté par Ahmad et authentifié par Shaykh Al-Albânî dans Sahîh Al-Jâmi' n°6472)`,
       validationRate: 10,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '🏠',
     },
     tree1: {
       id: 'tree1',
@@ -18,6 +19,7 @@ const initState = {
 (Rapporté par At-Tabarânî et authentifié par Shaykh Al-Albânî dans As-Silsilah As-Sahîhah n°2880)`,
       validationRate: 1,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '🌳',
     },
     tree2: {
       id: 'tree2',
@@ -27,6 +29,7 @@ const initState = {
         'Selon Jâbir ( رضي الله عنه), le Prophète ( صلى الله عليه و سلم) a dit : « Quiconque dit Subhâna Allâhi wa bihamdihi aura au Paradis un palmier planté à son intention. » (Rapporté par At-Tirmidhî)',
       validationRate: 1,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '🌴',
     },
     hassanats1: {
       id: 'hassanats1',
@@ -39,6 +42,7 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
 `,
       validationRate: 100,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '✅',
     },
     treasure1: {
       id: 'treasure1',
@@ -48,6 +52,7 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
 (Rapporté par Al-Bukhârî et Muslim)`,
       validationRate: 1,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '💰',
     },
     quran1: {
       id: 'quran1',
@@ -57,6 +62,7 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
 (Rapporté par At-Tirmidhî et authentifié par Shaykh Al-Albânî dans Sahîh At-Targhîb n°1477)`,
       validationRate: 3,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '📙',
     },
     quran2: {
       id: 'quran2',
@@ -66,6 +72,7 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
 (Rapporté par At-Tirmidhî et authentifié par Shaykh Al-Albânî dans Sahîh At-Targhîb n°1477)`,
       validationRate: 4,
       listRewards: [{ idRewards: '', numberRewardCorresponding: '' }],
+      emoji: '📙',
     },
   },
   rewards: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -33,22 +33,41 @@ const ValidationRateText = styled.Text`
 `;
 const ImageContainer = styled.View`
   flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
-const HomePageListItem = ({ onClick, hadith }) => (
-  <TouchableOpacity activeOpacity={1} onPress={onClick}>
-    <ItemContainer>
-      <ImageContainer />
-      <TextContainer>
-        <ItemTitle>{hadith.title}</ItemTitle>
-        <ItemDescription>
-          {hadith.description}.
-          <ValidationRateText>({hadith.validationRate}x)</ValidationRateText>
-        </ItemDescription>
-      </TextContainer>
-    </ItemContainer>
-  </TouchableOpacity>
-);
+const EmojiContainer = styled.Text`
+  font-size: 50px;
+`;
+
+class HomePageListItem extends Component {
+  renderImage = () => {
+    const { hadith } = this.props;
+    if (hadith.emoji) {
+      return <EmojiContainer>{hadith.emoji}</EmojiContainer>;
+    }
+    return <Text>''</Text>;
+  };
+
+  render() {
+    const { onClick, hadith } = this.props;
+    return (
+      <TouchableOpacity activeOpacity={1} onPress={onClick}>
+        <ItemContainer>
+          <ImageContainer>{this.renderImage()}</ImageContainer>
+          <TextContainer>
+            <ItemTitle>{hadith.title}</ItemTitle>
+            <ItemDescription>
+              {hadith.description}.
+              <ValidationRateText>({hadith.validationRate}x)</ValidationRateText>
+            </ItemDescription>
+          </TextContainer>
+        </ItemContainer>
+      </TouchableOpacity>
+    );
+  }
+}
 
 HomePageListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
