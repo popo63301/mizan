@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CounterDescription from '../containers/CounterDescription';
+import CounterButton from './CounterButton';
 
 const PageContainer = styled.View`
   display: flex;
@@ -8,16 +9,18 @@ const PageContainer = styled.View`
   flex: 1;
 `;
 
-const CounterDescriptionContainer = styled.View`
+const CounterBlocksContainer = styled.View`
   flex: 1;
 `;
 
 const CounterPage = () => (
   <PageContainer>
-    <CounterDescriptionContainer>
+    <CounterBlocksContainer>
       <CounterDescription />
-    </CounterDescriptionContainer>
-    <CounterDescriptionContainer />
+    </CounterBlocksContainer>
+    <CounterBlocksContainer>
+      <CounterButton />
+    </CounterBlocksContainer>
   </PageContainer>
 );
 
