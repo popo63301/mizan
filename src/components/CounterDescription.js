@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const CounterDescriptionContainer = styled.View`
   display: flex;
@@ -57,26 +58,34 @@ const CurrentProgressText = styled.Text`
 `;
 
 class CounterDescription extends Component {
-  renderCurrentProgress = () => (
-    <CurrentProgressContainer>
-      <CurrentProgressText>8/10</CurrentProgressText>
-    </CurrentProgressContainer>
-  );
+  renderCurrentProgress = () => {
+    const { hadith, currentProgress } = this.props;
+
+    return (
+      <CurrentProgressContainer>
+        <CurrentProgressText>
+          {currentProgress}/{hadith.validationRate}
+        </CurrentProgressText>
+      </CurrentProgressContainer>
+    );
+  };
 
   render() {
+    const { hadith, counterValue } = this.props;
+
     return (
       <CounterDescriptionContainer>
         <ModalButtonRow>
           <ModalButton>ℹ️</ModalButton>
         </ModalButtonRow>
         <DescriptionRow>
-          <DescriptionText>
-            Récitez la sourate "Qul Huwa Allâhu Ahad" puis faire ceci
-          </DescriptionText>
+          <DescriptionText>{hadith.description}</DescriptionText>
         </DescriptionRow>
         <RewardsRow>
           <TotalRewardContainer>
-            <TotalRewardText>400x 🌴</TotalRewardText>
+            <TotalRewardText>
+              {counterValue}x {hadith.emoji}
+            </TotalRewardText>
           </TotalRewardContainer>
           {this.renderCurrentProgress()}
         </RewardsRow>
@@ -84,4 +93,11 @@ class CounterDescription extends Component {
     );
   }
 }
+
+CounterDescription.propTypes = {
+  counterValue: PropTypes.number.isRequired,
+  hadith: PropTypes.object.isRequired, //eslint-disable-line
+  currentProgress: PropTypes.number.isRequired,
+};
+
 export default CounterDescription;

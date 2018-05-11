@@ -1,4 +1,9 @@
-import { getAllHadiths, getListHadithsIds, getHadithById } from './index';
+import {
+  getAllHadiths,
+  getListHadithsIds,
+  getHadithById,
+  getValidationRateByHadithId,
+} from './index';
 
 describe('Hadiths Selectors', () => {
   it('selects all hadiths', () => {
@@ -43,8 +48,35 @@ describe('Hadiths Selectors', () => {
       else: { something: 'important' },
     };
 
-    const props = { random: 'someValue', idHadith: 'house1' };
+    const props = { random: 'someValue', hadithId: 'house1' };
     const what = getHadithById(initStore, props);
     expect(what).toEqual('hadith for house');
+  });
+
+  it('gives validation hadith by hadith id', () => {
+    const initStore = {
+      hadiths: {
+        tree1: {
+          id: 'tree1',
+          title: 'Avoir des arbres au paradis',
+          description: 'description',
+          hadith: 'hadithvalue',
+          validationRate: 1,
+          emoji: '🌳',
+        },
+        tree2: {
+          id: 'tree2',
+          title: 'Avoir un palmier au paradis',
+          description: 'description',
+          hadith: 'hadithvalue',
+          validationRate: 1,
+          emoji: '🌴',
+        },
+      },
+    };
+
+    const props = { hadithId: 'tree2' };
+    const what = getValidationRateByHadithId(initStore, props);
+    expect(what).toEqual(1);
   });
 });

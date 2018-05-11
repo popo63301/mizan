@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import CounterDescription from './CounterDescription';
+import CounterDescription from '../containers/CounterDescription';
 
 const PageContainer = styled.View`
   display: flex;

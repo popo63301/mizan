@@ -6,7 +6,7 @@ const HomePageList = ({ navigation, listHadithsIds }) => (
   <View>
     {listHadithsIds.map((elem, key) => (
       <HomePageListItem
-        idHadith={elem}
+        hadithId={elem}
         key={key}
         onClick={() => {
           navigation.navigate('NavigationPageTest', { numero: key });
