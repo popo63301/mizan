@@ -1,14 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import HomePageListItem from './HomePageListItem';
+import HomePageListItem from '../containers/HomePageListItem';
 
-const sampleList = ['je suis', 'qqlq de ', 'très beau'];
-
-const HomePageList = ({ navigation }) => (
+const HomePageList = ({ navigation, listHadithsIds }) => (
   <View>
-    {sampleList.map((elem, key) => (
+    {listHadithsIds.map((elem, key) => (
       <HomePageListItem
-        text={elem}
+        idHadith={elem}
         key={key}
         onClick={() => {
           navigation.navigate('NavigationPageTest', { numero: key });

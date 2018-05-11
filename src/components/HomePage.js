@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import styled from 'styled-components';
-import HomePageList from './HomePageList';
+import HomePageList from '../containers/HomePageList';
 
 // const Page = styled.View`
 //   flex: 1;

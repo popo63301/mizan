@@ -1,4 +1,4 @@
-import { getAllHadiths, getListHadiths, getHadithById } from './index';
+import { getAllHadiths, getListHadithsIds, getHadithById } from './index';
 
 describe('Hadiths Selectors', () => {
   it('selects all hadiths', () => {
@@ -29,7 +29,7 @@ describe('Hadiths Selectors', () => {
       else: { something: 'important' },
     };
 
-    const what = getListHadiths(initStore);
+    const what = getListHadithsIds(initStore);
     expect(what).toEqual(['tree1', 'house1', 'smth']);
   });
 

@@ -14,10 +14,10 @@ const ItemLabel = styled.Text`
   text-align: center;
 `;
 
-const HomePageListItem = ({ onClick, text }) => (
+const HomePageListItem = ({ onClick, hadith }) => (
   <TouchableOpacity activeOpacity={1} onPress={onClick}>
     <ItemView>
-      <ItemLabel>{text}</ItemLabel>
+      <ItemLabel>{hadith.description}</ItemLabel>
     </ItemView>
   </TouchableOpacity>
 );
