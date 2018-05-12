@@ -12,3 +12,16 @@ export const getValidationRateByHadithId = createSelector(
 );
 
 export const getEmojiHadithByHadithId = createSelector(getHadithById, hadith => hadith.emoji);
+
+export const getListRewardByHadithId = createSelector(getHadithById, hadith => hadith.listRewards);
+
+export const getEmojisListForRewardListByHadithId = (state, props) => {
+  const listReward = getListRewardByHadithId(state, props);
+  const emojiList = {};
+
+  listReward.map((e) => {
+    emojiList[e.idRewards] = state.rewards[e.idRewards].emoji;
+  });
+
+  return emojiList;
+};

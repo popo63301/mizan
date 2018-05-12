@@ -22,7 +22,6 @@ const TotalPageButton = styled.TouchableHighlight`
   flex: 1;
 `;
 
-console.log('TotalPageButton', TotalPageButton);
 const HomePage = ({ navigation }) => (
   <PageContainer>
     <ListContainer>

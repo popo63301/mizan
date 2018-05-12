@@ -4,6 +4,7 @@ import {
   getHadithById,
   getValidationRateByHadithId,
   getEmojiHadithByHadithId,
+  getEmojisListForRewardListByHadithId,
 } from './index';
 
 describe('Hadiths Selectors', () => {
@@ -106,5 +107,47 @@ describe('Hadiths Selectors', () => {
     const props = { hadithId: 'tree2' };
     const what = getEmojiHadithByHadithId(initStore, props);
     expect(what).toEqual('🌴');
+  });
+
+  it('getEmojisListForRewardListByHadithId', () => {
+    const initStore = {
+      hadiths: {
+        hassanats1: {
+          id: 'hassanats1',
+          listRewards: [
+            { idRewards: 'hassanat', numberRewardCorresponding: 1000 },
+            { idRewards: 'sayhat', numberRewardCorresponding: -1000 },
+          ],
+        },
+        treasure1: {
+          id: 'treasure1',
+          listRewards: [{ idRewards: 'treasure', numberRewardCorresponding: 1 }],
+        },
+      },
+      rewards: {
+        hassanat: {
+          id: 'hassanat',
+          title: 'Hassanat',
+          listHadiths: ['hassanats1'],
+          emoji: '✅',
+        },
+        sayhat: {
+          id: 'sayhat',
+          title: 'Sayhat',
+          listHadiths: ['hassanats1'],
+          emoji: '❌',
+        },
+        treasure: {
+          id: 'treasure',
+          title: 'Treasure',
+          listHadiths: ['treasure1'],
+          emoji: '💰',
+        },
+      },
+    };
+
+    const props = { hadithId: 'hassanats1' };
+    const what = getEmojisListForRewardListByHadithId(initStore, props);
+    expect(what).toEqual({ hassanat: '✅', sayhat: '❌' });
   });
 });

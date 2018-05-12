@@ -41,7 +41,10 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
 (Rapporté par Muslim dans son Sahîh n°2698)
 `,
       validationRate: 100,
-      listRewards: [{ idRewards: 'hassanat', numberRewardCorresponding: 1000 }],
+      listRewards: [
+        { idRewards: 'hassanat', numberRewardCorresponding: 1000 },
+        { idRewards: 'sayhat', numberRewardCorresponding: -1000 },
+      ],
       emoji: '✅',
     },
     treasure1: {
@@ -99,6 +102,12 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
       title: 'Hassanat',
       listHadiths: ['hassanats1'],
       emoji: '✅',
+    },
+    sayhat: {
+      id: 'sayhat',
+      title: 'Sayhat',
+      listHadiths: ['hassanats1'],
+      emoji: '❌',
     },
     treasure: {
       id: 'treasure',

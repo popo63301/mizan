@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import CounterRewardBox from '../containers/CounterRewardBox';
 
 const CounterDescriptionContainer = styled.View`
   display: flex;
@@ -40,12 +41,6 @@ const TotalRewardContainer = styled.View`
   flex: 1;
 `;
 
-const TotalRewardText = styled.Text`
-  padding-left: 10px;
-  font-size: 20px;
-  font-weight: bold;
-`;
-
 const CurrentProgressContainer = styled.View`
   flex: 1;
 `;
@@ -58,16 +53,6 @@ const CurrentProgressText = styled.Text`
 `;
 
 class CounterDescription extends Component {
-  getTotalReward = () => {
-    const { counterValue, hadith } = this.props;
-    const totalReward = Math.trunc(counterValue / hadith.validationRate);
-    return (
-      <TotalRewardText>
-        {totalReward}x {hadith.emoji}
-      </TotalRewardText>
-    );
-  };
-
   renderCurrentProgress = () => {
     const { hadith, currentProgress } = this.props;
 
@@ -84,7 +69,7 @@ class CounterDescription extends Component {
   };
 
   render() {
-    const { hadith, counterValue } = this.props;
+    const { hadith } = this.props;
 
     return (
       <CounterDescriptionContainer>
@@ -95,7 +80,9 @@ class CounterDescription extends Component {
           <DescriptionText>{hadith.description}</DescriptionText>
         </DescriptionRow>
         <RewardsRow>
-          <TotalRewardContainer>{this.getTotalReward()}</TotalRewardContainer>
+          <TotalRewardContainer>
+            <CounterRewardBox hadithId={hadith.id} />
+          </TotalRewardContainer>
           {this.renderCurrentProgress()}
         </RewardsRow>
       </CounterDescriptionContainer>
