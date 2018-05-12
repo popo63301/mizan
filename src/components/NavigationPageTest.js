@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View } from 'react-native';
 
-const Page = props => (
+const Page = () => (
   <View>
-    <Text>page {props.navigation.state.params.numero} </Text>
+    <Text>page </Text>
   </View>
 );
 

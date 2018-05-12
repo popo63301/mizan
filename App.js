@@ -8,15 +8,13 @@ import Router from './src/router';
 
 const store = createStore(appStore, initState);
 
-function chouf() {
-  console.log(store.getState());
-  // var okay = store.getState()
-  // console.log(okay.decks.byId[2])
-}
+// function chouf() {
+//   console.log(store.getState());
+//   // var okay = store.getState()
+//   // console.log(okay.decks.byId[2])
+// }
 
-store.subscribe(chouf);
-
-console.log('store', store.getState());
+// store.subscribe(chouf);
 
 const App = () => (
   <Provider store={store}>
