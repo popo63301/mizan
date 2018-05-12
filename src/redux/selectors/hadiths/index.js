@@ -10,3 +10,5 @@ export const getValidationRateByHadithId = createSelector(
   getHadithById,
   hadith => hadith.validationRate,
 );
+
+export const getEmojiHadithByHadithId = createSelector(getHadithById, hadith => hadith.emoji);

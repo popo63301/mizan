@@ -29,7 +29,7 @@ const HomePage = ({ navigation }) => (
       <HomePageList navigation={navigation} />
     </ListContainer>
     <BottomBar>
-      <TotalPageButton onPress={() => navigation.navigate('NavigationPageTest')}>
+      <TotalPageButton onPress={() => navigation.navigate('TotalPage')}>
         <View>
           <Text>Total Page</Text>
         </View>

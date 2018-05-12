@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { createSelector } from 'reselect';
 
 export const getTotalRewardByRewardId = (state, props) => {
   const listHadiths = state.rewards[props.rewardId].listHadiths;
@@ -14,3 +15,10 @@ export const getTotalRewardByRewardId = (state, props) => {
 
   return listHadiths.reduce(reducer, 0);
 };
+
+export const getListRewardsIds = state => Object.keys(state.rewards);
+
+export const getRewardByRewardId = (state, props) => state.rewards[props.rewardId];
+
+export const getRewardNameByRewardId = createSelector(getRewardByRewardId, reward => reward.title);
+export const getEmojiRewardByRewardId = createSelector(getRewardByRewardId, reward => reward.emoji);

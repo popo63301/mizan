@@ -76,12 +76,42 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
     },
   },
   rewards: {
-    house: { id: 'house', title: 'house', listHadiths: ['house1'] },
-    tree: { id: 'tree', title: 'tree', listHadiths: ['tree1'] },
-    palm: { id: 'palm', title: 'palm', listHadiths: ['palm1'] },
-    hassanat: { id: 'hassanat', title: 'hassanat', listHadiths: ['hassanats1'] },
-    treasure: { id: 'treasure', title: 'treasure', listHadiths: ['treasure1'] },
-    quran: { id: 'quran', title: 'quran', listHadiths: ['quran1', 'quran2'] },
+    house: {
+      id: 'house',
+      title: 'House',
+      listHadiths: ['house1'],
+      emoji: '🏠',
+    },
+    tree: {
+      id: 'tree',
+      title: 'Tree',
+      listHadiths: ['tree1'],
+      emoji: '🌳',
+    },
+    palm: {
+      id: 'palm',
+      title: 'Palm',
+      listHadiths: ['tree2'],
+      emoji: '🌴',
+    },
+    hassanat: {
+      id: 'hassanat',
+      title: 'Hassanat',
+      listHadiths: ['hassanats1'],
+      emoji: '✅',
+    },
+    treasure: {
+      id: 'treasure',
+      title: 'Treasure',
+      listHadiths: ['treasure1'],
+      emoji: '💰',
+    },
+    quran: {
+      id: 'quran',
+      title: 'Quran',
+      listHadiths: ['quran1', 'quran2'],
+      emoji: '📙',
+    },
   },
   counters: {
     house1: 0,
