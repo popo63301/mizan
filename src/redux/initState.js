@@ -14,11 +14,11 @@ const initState = {
       id: 'tree1',
       title: 'Avoir des arbres au paradis',
       description:
-        'Dites "Subhâna Allâh" ou "Al-HamdulilLâh" ou "Lâ ilâha illâ Allâh" ou "Allâhu Akbar"',
+        'Dites "Subhâna Allâh", "Al-HamdulilLâh", "Lâ ilâha illâ Allâh" et "Allâhu Akbar"',
       hadith: `D'après Ibn 'Abbâs ( رضي الله عنهما), le Prophète (صلى الله عليه و سلم) a dit: « Celui qui dit: « Subhâna Allâh, Al-HamdulilLâh, Lâ ilâha illâ Allâh, Allâhu Akbar. » Il lui est planté pour chacune de ces paroles un arbre dans le Paradis ».
 (Rapporté par At-Tabarânî et authentifié par Shaykh Al-Albânî dans As-Silsilah As-Sahîhah n°2880)`,
-      validationRate: 1,
-      listRewards: [{ idRewards: 'tree', numberRewardCorresponding: 1 }],
+      validationRate: 4,
+      listRewards: [{ idRewards: 'tree', numberRewardCorresponding: 4 }],
       emoji: '🌳',
     },
     tree2: {
