@@ -14,7 +14,13 @@ const CounterBlocksContainer = styled.View`
   flex: 1;
 `;
 
-const CounterPage = ({ hadithId }) => (
+const CounterPage = ({
+  navigation: {
+    state: {
+      params: { hadithId },
+    },
+  },
+}) => (
   <PageContainer>
     <CounterBlocksContainer>
       <CounterDescription hadithId={hadithId} />
@@ -26,11 +32,7 @@ const CounterPage = ({ hadithId }) => (
 );
 
 CounterPage.propTypes = {
-  hadithId: PropTypes.string.isRequired,
-};
-
-CounterPage.defaultProps = {
-  hadithId: 'tree1',
+  navigation: PropTypes.object.isRequired, //eslint-disable-line
 };
 
 export default CounterPage;

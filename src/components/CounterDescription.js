@@ -58,16 +58,29 @@ const CurrentProgressText = styled.Text`
 `;
 
 class CounterDescription extends Component {
+  getTotalReward = () => {
+    const { counterValue, hadith } = this.props;
+    const totalReward = Math.trunc(counterValue / hadith.validationRate);
+    return (
+      <TotalRewardText>
+        {totalReward}x {hadith.emoji}
+      </TotalRewardText>
+    );
+  };
+
   renderCurrentProgress = () => {
     const { hadith, currentProgress } = this.props;
 
-    return (
-      <CurrentProgressContainer>
-        <CurrentProgressText>
-          {currentProgress}/{hadith.validationRate}
-        </CurrentProgressText>
-      </CurrentProgressContainer>
-    );
+    if (hadith.validationRate > 1) {
+      return (
+        <CurrentProgressContainer>
+          <CurrentProgressText>
+            {currentProgress}/{hadith.validationRate}
+          </CurrentProgressText>
+        </CurrentProgressContainer>
+      );
+    }
+    return null;
   };
 
   render() {
@@ -82,11 +95,7 @@ class CounterDescription extends Component {
           <DescriptionText>{hadith.description}</DescriptionText>
         </DescriptionRow>
         <RewardsRow>
-          <TotalRewardContainer>
-            <TotalRewardText>
-              {counterValue}x {hadith.emoji}
-            </TotalRewardText>
-          </TotalRewardContainer>
+          <TotalRewardContainer>{this.getTotalReward()}</TotalRewardContainer>
           {this.renderCurrentProgress()}
         </RewardsRow>
       </CounterDescriptionContainer>

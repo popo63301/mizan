@@ -4,7 +4,7 @@ import CounterPage from './components/CounterPage';
 import NavigationPageTest from './components/NavigationPageTest';
 
 export default createStackNavigator({
-  CounterPage: { screen: CounterPage },
   HomePage: { screen: HomePage },
+  CounterPage: { screen: CounterPage },
   NavigationPageTest: { screen: NavigationPageTest },
 });

@@ -9,7 +9,7 @@ const HomePageList = ({ navigation, listHadithsIds }) => (
         hadithId={elem}
         key={key}
         onClick={() => {
-          navigation.navigate('NavigationPageTest', { numero: key });
+          navigation.navigate('CounterPage', { hadithId: elem });
         }}
       />
     ))}
