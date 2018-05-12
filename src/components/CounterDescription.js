@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import CounterRewardBox from '../containers/CounterRewardBox';
+import CounterModalInfo from '../containers/CounterModalInfo';
 
 const CounterDescriptionContainer = styled.View`
   display: flex;
@@ -14,10 +15,6 @@ const ModalButtonRow = styled.View`
   display: flex;
   flex-direction: row-reverse;
   flex: 1;
-`;
-
-const ModalButton = styled.Text`
-  font-size: 30px;
 `;
 
 const DescriptionRow = styled.View`
@@ -74,7 +71,7 @@ class CounterDescription extends Component {
     return (
       <CounterDescriptionContainer>
         <ModalButtonRow>
-          <ModalButton>ℹ️</ModalButton>
+          <CounterModalInfo hadithId={hadith.id} />
         </ModalButtonRow>
         <DescriptionRow>
           <DescriptionText>{hadith.description}</DescriptionText>
