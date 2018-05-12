@@ -91,7 +91,6 @@ class CounterDescription extends Component {
 }
 
 CounterDescription.propTypes = {
-  counterValue: PropTypes.number.isRequired,
   hadith: PropTypes.object.isRequired, //eslint-disable-line
   currentProgress: PropTypes.number.isRequired,
 };
