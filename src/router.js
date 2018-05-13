@@ -5,8 +5,8 @@ import TotalPage from './components/TotalPage';
 import NavigationPageTest from './components/NavigationPageTest';
 
 export default createStackNavigator({
+  NavigationPageTest: { screen: NavigationPageTest },
   HomePage: { screen: HomePage },
   CounterPage: { screen: CounterPage },
   TotalPage: { screen: TotalPage },
-  NavigationPageTest: { screen: NavigationPageTest },
 });
