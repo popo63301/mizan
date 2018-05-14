@@ -1,0 +1,1 @@
+export const INCREASE_BUTTON = 'INCREASE_BUTTON';
