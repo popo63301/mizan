@@ -1,12 +1,12 @@
 import { createStackNavigator } from 'react-navigation';
 import HomePage from './components/HomePage';
 import CounterPage from './components/CounterPage';
+import OptionPage from './containers/OptionPage';
 import TotalPage from './components/TotalPage';
-import NavigationPageTest from './components/NavigationPageTest';
 
 export default createStackNavigator({
-  NavigationPageTest: { screen: NavigationPageTest },
   HomePage: { screen: HomePage },
   CounterPage: { screen: CounterPage },
+  OptionPage: { screen: OptionPage },
   TotalPage: { screen: TotalPage },
 });

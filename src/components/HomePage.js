@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Button, Text, View } from 'react-native';
 import styled from 'styled-components';
 import HomePageList from '../containers/HomePageList';
 
@@ -22,19 +22,28 @@ const TotalPageButton = styled.TouchableHighlight`
   flex: 1;
 `;
 
-const HomePage = ({ navigation }) => (
-  <PageContainer>
-    <ListContainer>
-      <HomePageList navigation={navigation} />
-    </ListContainer>
-    <BottomBar>
-      <TotalPageButton onPress={() => navigation.navigate('TotalPage')}>
-        <View>
-          <Text>Total Page</Text>
-        </View>
-      </TotalPageButton>
-    </BottomBar>
-  </PageContainer>
-);
+class HomePage extends Component {
+  static navigationOptions = ({ navigation: { navigate } }) => ({
+    headerRight: <Button onPress={() => navigate('OptionPage')} title="Options" color="red" />,
+  });
+
+  render() {
+    const { navigation } = this.props;
+    return (
+      <PageContainer>
+        <ListContainer>
+          <HomePageList navigation={navigation} />
+        </ListContainer>
+        <BottomBar>
+          <TotalPageButton onPress={() => navigation.navigate('TotalPage')}>
+            <View>
+              <Text>Total Page</Text>
+            </View>
+          </TotalPageButton>
+        </BottomBar>
+      </PageContainer>
+    );
+  }
+}
 
 export default HomePage;
