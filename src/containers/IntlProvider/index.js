@@ -6,6 +6,6 @@ import withMessages from './withMessage';
 
 addLocaleData([...fr]);
 
-const mapStateToProps = ({ locale }) => ({ locale });
+const mapStateToProps = ({ locale }) => ({ locale, key: locale });
 
 export default connect(mapStateToProps)(withMessages(IntlProvider));

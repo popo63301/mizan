@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -57,9 +58,11 @@ class HomePageListItem extends Component {
         <ItemContainer>
           <ImageContainer>{this.renderImage()}</ImageContainer>
           <TextContainer>
-            <ItemTitle>{hadith.title}</ItemTitle>
+            <ItemTitle>
+              <FormattedMessage id={hadith.title} />
+            </ItemTitle>
             <ItemDescription>
-              {hadith.description}.
+              <FormattedMessage id={hadith.description} />.
               <ValidationRateText>({hadith.validationRate}x)</ValidationRateText>
             </ItemDescription>
           </TextContainer>

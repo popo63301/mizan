@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import CounterRewardBox from '../containers/CounterRewardBox';
@@ -74,7 +75,9 @@ class CounterDescription extends Component {
           <CounterModalInfo hadithId={hadith.id} />
         </ModalButtonRow>
         <DescriptionRow>
-          <DescriptionText>{hadith.description}</DescriptionText>
+          <DescriptionText>
+            <FormattedMessage id={hadith.description} />
+          </DescriptionText>
         </DescriptionRow>
         <RewardsRow>
           <TotalRewardContainer>

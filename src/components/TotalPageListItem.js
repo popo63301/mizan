@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -30,7 +31,9 @@ const ValueText = styled.Text`
 const TotalPageListItem = ({ emoji, rewardName, rewardValue }) => (
   <Container>
     <LabelRow>
-      <LabelText>{rewardName}:</LabelText>
+      <LabelText>
+        <FormattedMessage id={rewardName} />:
+      </LabelText>
     </LabelRow>
     <ValueRow>
       <ValueText>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
+import { FormattedMessage } from 'react-intl';
 import Modal from 'react-native-modal';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -50,7 +51,9 @@ class CounterModalInfo extends Component {
         >
           <ModalContentView>
             <HadithContainer>
-              <Text>{hadith}</Text>
+              <Text>
+                <FormattedMessage id={hadith} />
+              </Text>
             </HadithContainer>
             <TouchableOpacity onPress={this.toggleModal}>
               <QuitButtonView>
