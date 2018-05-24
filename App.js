@@ -1,7 +1,8 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { Component } from 'react';
+import { Text, Platform } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { AdMobInterstitial } from 'react-native-admob';
 
 import IntlProvider from './src/containers/IntlProvider';
 import appStore from './src/redux/reducers';
@@ -18,12 +19,41 @@ const store = createStore(appStore, initState);
 
 // store.subscribe(chouf);
 
-const App = () => (
-  <Provider store={store}>
-    <IntlProvider textComponent={Text}>
-      <Router />
-    </IntlProvider>
-  </Provider>
-);
+class App extends Component {
+  componentDidMount() {
+    this.showInterstitial();
+  }
+
+  showInterstitial = () => {
+    const os = Platform.OS;
+    switch (os) {
+      case 'android': {
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5296245083041935/2344356925');
+        break;
+      }
+      case 'ios': {
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5296245083041935/4284727191');
+        break;
+      }
+      default: {
+        AdMobInterstitial.setAdUnitID('ca-app-pub-5296245083041935/2344356925');
+        break;
+      }
+    }
+
+    AdMobInterstitial.requestAd()
+      .then(() => AdMobInterstitial.showAd())
+      .catch(e => console.log('problem Interstitial', e));
+  };
+  render() {
+    return (
+      <Provider store={store}>
+        <IntlProvider textComponent={Text}>
+          <Router />
+        </IntlProvider>
+      </Provider>
+    );
+  }
+}
 
 export default App;

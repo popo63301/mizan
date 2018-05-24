@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Platform } from 'react-native';
+import { AdMobBanner } from 'react-native-admob';
 import styled from 'styled-components';
 import HomePageList from '../containers/HomePageList';
 
@@ -18,28 +19,44 @@ const BottomBar = styled.View`
   background-color: white;
 `;
 
-const TotalPageButton = styled.TouchableHighlight`
-  flex: 1;
-`;
-
 class HomePage extends Component {
   static navigationOptions = ({ navigation: { navigate } }) => ({
-    headerRight: <Button onPress={() => navigate('OptionPage')} title="Options" color="red" />,
+    headerLeft: <Button onPress={() => navigate('OptionPage')} title="Options" color="red" />,
+    headerRight: <Button onPress={() => navigate('TotalPage')} title="TotalPage" color="blue" />,
   });
+
+  getAdUnitId = () => {
+    const os = Platform.OS;
+
+    switch (os) {
+      case 'android': {
+        return 'ca-app-pub-5296245083041935/5065781235';
+      }
+      case 'ios': {
+        return 'ca-app-pub-5296245083041935/5597808864';
+      }
+      default: {
+        return 'ca-app-pub-5296245083041935/5065781235';
+      }
+    }
+  };
 
   render() {
     const { navigation } = this.props;
+    const addUnitId = this.getAdUnitId();
+
     return (
       <PageContainer>
         <ListContainer>
           <HomePageList navigation={navigation} />
         </ListContainer>
         <BottomBar>
-          <TotalPageButton onPress={() => navigation.navigate('TotalPage')}>
-            <View>
-              <Text>Total Page</Text>
-            </View>
-          </TotalPageButton>
+          <AdMobBanner
+            adSize="fullBanner"
+            adUnitID={addUnitId}
+            testDevices={[AdMobBanner.simulatorId]}
+            onAdFailedToLoad={error => console.log('bahhhh', error)}
+          />
         </BottomBar>
       </PageContainer>
     );
