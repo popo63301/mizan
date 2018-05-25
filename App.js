@@ -21,7 +21,7 @@ const store = createStore(appStore, initState);
 
 class App extends Component {
   componentDidMount() {
-    this.showInterstitial();
+    //this.showInterstitial();
   }
 
   showInterstitial = () => {

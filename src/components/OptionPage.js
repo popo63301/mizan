@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Button, Text } from 'react-native';
 import { FormattedMessage } from 'react-intl';
+import AdBanner from './AdBanner';
 
 const OptionPage = ({ locale, toggleLanguage }) => (
   <View>
@@ -14,6 +15,7 @@ const OptionPage = ({ locale, toggleLanguage }) => (
       color="#841584"
       accessibilityLabel="Learn more about this purple button"
     />
+    <AdBanner />
   </View>
 );
 
