@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-native';
 import styled from 'styled-components';
+import NavigationBar from './NavigationBar';
 import AdBanner from './AdBanner';
 import HomePageList from '../containers/HomePageList';
 
@@ -25,6 +26,7 @@ class HomePage extends Component {
 
     return (
       <PageContainer>
+        <NavigationBar navigation={navigation} />
         <ListContainer>
           <HomePageList navigation={navigation} />
         </ListContainer>

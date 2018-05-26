@@ -4,9 +4,12 @@ import CounterPage from './components/CounterPage';
 import OptionPage from './containers/OptionPage';
 import TotalPage from './components/TotalPage';
 
-export default createStackNavigator({
-  HomePage: { screen: HomePage },
-  CounterPage: { screen: CounterPage },
-  OptionPage: { screen: OptionPage },
-  TotalPage: { screen: TotalPage },
-});
+export default createStackNavigator(
+  {
+    OptionPage: { screen: OptionPage },
+    HomePage: { screen: HomePage },
+    CounterPage: { screen: CounterPage },
+    TotalPage: { screen: TotalPage },
+  },
+  { headerMode: 'none' },
+);
