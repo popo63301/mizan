@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform } from 'react-native';
+import { Platform, View } from 'react-native';
 import { AdMobBanner } from 'react-native-admob';
 
 class AdBanner extends Component {
@@ -23,12 +23,14 @@ class AdBanner extends Component {
     const addUnitId = this.getAdUnitId();
 
     return (
-      <AdMobBanner
-        adSize="fullBanner"
-        adUnitID={addUnitId}
-        testDevices={[AdMobBanner.simulatorId]}
-        onAdFailedToLoad={error => console.log('bahhhh', error)}
-      />
+      <View style={{ position: 'absolute', bottom: 0 }}>
+        <AdMobBanner
+          adSize="fullBanner"
+          adUnitID={addUnitId}
+          testDevices={[AdMobBanner.simulatorId]}
+          onAdFailedToLoad={error => console.log('bahhhh', error)}
+        />
+      </View>
     );
   }
 }
