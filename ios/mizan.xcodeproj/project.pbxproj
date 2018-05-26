@@ -42,6 +42,7 @@
 		6C5DD586EFE14912A93F8F49 /* libRNAdMobManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3AD7938E7D84B1BB4D52012 /* libRNAdMobManager.a */; };
 		73CA1B3930814094AD9746D0 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97EDA060945B4CB8B04DE19E /* libRNSVG.a */; };
 		5A4A2AB0F1FB47CCAA0FF842 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8602237AEA1A4E468CCEAF19 /* libRNSVG-tvOS.a */; };
+		97019F3F79154C499AEB9EE3 /* Capriola-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222FFEDF09C842D198758DF3 /* Capriola-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -355,6 +356,7 @@
 		9F4CFF092CCD4C3BB9E7D23B /* RNSVG.xcodeproj */ = {isa = PBXFileReference; name = "RNSVG.xcodeproj"; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		97EDA060945B4CB8B04DE19E /* libRNSVG.a */ = {isa = PBXFileReference; name = "libRNSVG.a"; path = "libRNSVG.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		8602237AEA1A4E468CCEAF19 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; name = "libRNSVG-tvOS.a"; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		222FFEDF09C842D198758DF3 /* Capriola-Regular.ttf */ = {isa = PBXFileReference; name = "Capriola-Regular.ttf"; path = "../assets/fonts/Capriola-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -598,6 +600,7 @@
 				00E356EF1AD99517003FC87E /* mizanTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				BF10EF4125C84E1DA5C7AA25 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -623,6 +626,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		BF10EF4125C84E1DA5C7AA25 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				222FFEDF09C842D198758DF3 /* Capriola-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1070,6 +1082,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				97019F3F79154C499AEB9EE3 /* Capriola-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

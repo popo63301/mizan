@@ -5,14 +5,21 @@ import PropTypes from 'prop-types';
 import AdBanner from './AdBanner';
 import NavigationBar from './NavigationBar';
 
-const OptionPage = ({ locale, navigation, toggleLanguage }) => (
+const OptionPage = ({ navigation, toggleLanguage }) => (
   <View style={{ backgroundColor: 'white', display: 'flex', flex: 1 }}>
     <NavigationBar navigation={navigation} isBack />
     <View>
-      <FormattedMessage id="hello" />
-      <FormattedMessage id="beautiful" />
-
-      <Text>{locale}</Text>
+      <Text
+        style={{
+          color: 'black',
+          textAlign: 'center',
+          fontSize: 24,
+          fontFamily: 'Capriola-Regular',
+          marginTop: 47,
+        }}
+      >
+        <FormattedMessage id="option.selectLanguage" />
+      </Text>
       <Button
         onPress={() => toggleLanguage()}
         title="Change language"
@@ -25,7 +32,6 @@ const OptionPage = ({ locale, navigation, toggleLanguage }) => (
 );
 
 OptionPage.propTypes = {
-  locale: PropTypes.string.isRequired,
   navigation: PropTypes.object.isRequired, //eslint-disable-line
   toggleLanguage: PropTypes.func.isRequired,
 };
