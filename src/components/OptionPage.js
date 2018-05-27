@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import AdBanner from './AdBanner';
@@ -26,18 +26,17 @@ const OptionPage = ({ navigation, toggleLanguage }) => (
         <FormattedMessage id="option.selectLanguage" />
       </Text>
 
-      {languages.map(e => (
-        <TouchableOpacity activeOpacity={0.5} onPress={() => toggleLanguage(e.id)}>
-          <View>{React.createElement(e.elem)}</View>
-        </TouchableOpacity>
-      ))}
-
-      <Button
-        onPress={() => toggleLanguage()}
-        title="Change language"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <View
+        style={{
+ marginTop: 45, display: 'flex', flexDirection: 'row', justifyContent: 'center',
+}}
+      >
+        {languages.map(e => (
+          <TouchableOpacity activeOpacity={0.5} onPress={() => toggleLanguage(e.id)}>
+            <View>{React.createElement(e.elem)}</View>
+          </TouchableOpacity>
+        ))}
+      </View>
     </View>
     <AdBanner />
   </View>
