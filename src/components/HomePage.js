@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View } from 'react-native';
+import { Button } from 'react-native';
 import styled from 'styled-components';
 import NavigationBar from './NavigationBar';
 import AdBanner from './AdBanner';
@@ -21,14 +21,17 @@ class HomePage extends Component {
     headerRight: <Button onPress={() => navigate('TotalPage')} title="TotalPage" color="blue" />,
   });
 
+  componentWillMount() {
+    console.log('HomePage will mount');
+  }
   render() {
-    const { navigation } = this.props;
+    const { navigation, history } = this.props;
 
     return (
       <PageContainer>
-        <NavigationBar navigation={navigation} />
+        <NavigationBar history={history} />
         <ListContainer>
-          <HomePageList navigation={navigation} />
+          <HomePageList navigation={navigation} push={history.push} />
         </ListContainer>
         <AdBanner />
       </PageContainer>

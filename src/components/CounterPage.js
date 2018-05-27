@@ -15,9 +15,9 @@ const CounterBlocksContainer = styled.View`
 `;
 
 const CounterPage = ({
-  navigation: {
-    state: {
-      params: { hadithId },
+  history: {
+    location: {
+      state: { hadithId },
     },
   },
 }) => (
