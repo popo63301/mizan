@@ -23,7 +23,7 @@ class AdBanner extends Component {
     const addUnitId = this.getAdUnitId();
 
     return (
-      <View style={{ position: 'absolute', bottom: 0 }}>
+      <View style={{}}>
         <AdMobBanner
           adSize="fullBanner"
           adUnitID={addUnitId}

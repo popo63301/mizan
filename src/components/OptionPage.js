@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import AdBanner from './AdBanner';
@@ -26,19 +26,26 @@ const OptionPage = ({ navigation, toggleLanguage }) => (
         <FormattedMessage id="option.selectLanguage" />
       </Text>
 
-      <View
-        style={{
- marginTop: 45, display: 'flex', flexDirection: 'row', justifyContent: 'center',
-}}
-      >
-        {languages.map(e => (
-          <TouchableOpacity activeOpacity={0.5} onPress={() => toggleLanguage(e.id)}>
-            <View>{React.createElement(e.elem)}</View>
-          </TouchableOpacity>
-        ))}
-      </View>
+      <ScrollView>
+        <View
+          style={{
+            marginTop: 45,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+          }}
+        >
+          {languages.map(e => (
+            <TouchableOpacity activeOpacity={0.5} onPress={() => toggleLanguage(e.id)}>
+              <View>{React.createElement(e.elem)}</View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
     </View>
-    <AdBanner />
+    <View style={{ position: 'absolute', bottom: 0 }}>
+      <AdBanner />
+    </View>
   </View>
 );
 

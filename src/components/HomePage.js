@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-native';
+import { Button, View } from 'react-native';
 import styled from 'styled-components';
 import NavigationBar from './NavigationBar';
 import AdBanner from './AdBanner';

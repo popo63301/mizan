@@ -6,7 +6,6 @@ export default function France() {
     <Svg
       height="50"
       id="Capa_1"
-      style={{ enableBackground: 'new 0 0 512 512' }}
       width="80"
       version="1.1"
       viewBox="0 0 512 512"

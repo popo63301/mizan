@@ -6,8 +6,8 @@ import TotalPage from './components/TotalPage';
 
 export default createStackNavigator(
   {
-    OptionPage: { screen: OptionPage },
     HomePage: { screen: HomePage },
+    OptionPage: { screen: OptionPage },
     CounterPage: { screen: CounterPage },
     TotalPage: { screen: TotalPage },
   },
