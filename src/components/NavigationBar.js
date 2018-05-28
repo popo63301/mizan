@@ -10,6 +10,7 @@ const NavigationBarContainer = styled.View`
   background-color: #72c699;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 `;
 class NavigationBar extends Component {
   leftIconFunction = () => {
@@ -34,15 +35,44 @@ class NavigationBar extends Component {
       </View>
     );
   };
+
+  renderRightIcon = () => {
+    const { push } = this.props.history;
+    if (!this.props.isBack) {
+      return (
+        <TouchableOpacity activeOpacity={0.5} onPress={() => push('TotalPage')}>
+          <View style={{ marginRight: 15, marginTop: 12 }}>
+            <Badge />
+          </View>
+        </TouchableOpacity>
+      );
+    }
+  };
+
+  renderTitle = () => {
+    if (!this.props.isBack) {
+      return (
+        <Text
+          style={{
+            fontFamily: 'Capriola-Regular',
+            fontSize: 36,
+            color: 'white',
+            marginTop: 12,
+          }}
+        >
+          Mizan
+        </Text>
+      );
+    }
+  };
   render() {
     return (
       <NavigationBarContainer>
         <TouchableOpacity activeOpacity={0.5} onPress={this.leftIconFunction}>
           {this.renderLeftIcon()}
         </TouchableOpacity>
-        {/* <View>
-          <Badge />
-        </View> */}
+        {this.renderTitle()}
+        {this.renderRightIcon()}
       </NavigationBarContainer>
     );
   }
