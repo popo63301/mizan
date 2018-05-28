@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
 import LeftArrow from '../../assets/svg/LeftArrow';
 import Badge from '../../assets/svg/Badge';
@@ -55,9 +55,9 @@ class NavigationBar extends Component {
         <Text
           style={{
             fontFamily: 'Capriola-Regular',
-            fontSize: 36,
+            fontSize: 24,
             color: 'white',
-            marginTop: 12,
+            marginTop: 20,
           }}
         >
           Mizan
