@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import RewardImage from './RewardImage';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -17,18 +18,28 @@ const LabelRow = styled.View`
 
 const ValueRow = styled.View`
   flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
 
 const LabelText = styled.Text`
+  color: black;
   font-size: 20px;
+  font-family: Capriola-Regular;
 `;
 
 const ValueText = styled.Text`
+  margin-right: 5px;
+  color: black;
   font-size: 24px;
   text-align: right;
+  font-family: Capriola-Regular;
 `;
 
-const TotalPageListItem = ({ emoji, rewardName, rewardValue }) => (
+const TotalPageListItem = ({
+  emoji, rewardName, rewardValue, rewardId,
+}) => (
   <Container>
     <LabelRow>
       <LabelText>
@@ -36,9 +47,8 @@ const TotalPageListItem = ({ emoji, rewardName, rewardValue }) => (
       </LabelText>
     </LabelRow>
     <ValueRow>
-      <ValueText>
-        {rewardValue} x{emoji}
-      </ValueText>
+      <ValueText>{rewardValue} x</ValueText>
+      <RewardImage idReward={rewardId} height={40} width={40} />
     </ValueRow>
   </Container>
 );

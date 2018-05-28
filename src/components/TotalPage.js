@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavigationBar from './NavigationBar';
 import AdBanner from './AdBanner';
 import TotalPageList from '../containers/TotalPageList';
 
@@ -13,8 +14,9 @@ const ListContainer = styled.ScrollView`
   flex: 6;
 `;
 
-const TotalPage = () => (
+const TotalPage = ({ history }) => (
   <Container>
+    <NavigationBar history={history} isBack />
     <ListContainer>
       <TotalPageList />
     </ListContainer>
