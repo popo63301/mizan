@@ -8,6 +8,7 @@ const initState = {
       validationRate: 10,
       listRewards: [{ idRewards: 'house', numberRewardCorresponding: 1 }],
       emoji: '🏠',
+      mainRewardId: 'house',
     },
     tree1: {
       id: 'tree1',
@@ -17,6 +18,7 @@ const initState = {
       validationRate: 4,
       listRewards: [{ idRewards: 'tree', numberRewardCorresponding: 4 }],
       emoji: '🌳',
+      mainRewardId: 'tree',
     },
     tree2: {
       id: 'tree2',
@@ -26,6 +28,7 @@ const initState = {
       validationRate: 1,
       listRewards: [{ idRewards: 'palm', numberRewardCorresponding: 1 }],
       emoji: '🌴',
+      mainRewardId: 'palm',
     },
     hassanats1: {
       id: 'hassanats1',
@@ -38,6 +41,7 @@ const initState = {
         { idRewards: 'sayhat', numberRewardCorresponding: -1000 },
       ],
       emoji: '✅',
+      mainRewardId: 'hassanat',
     },
     treasure1: {
       id: 'treasure1',
@@ -47,6 +51,7 @@ const initState = {
       validationRate: 1,
       listRewards: [{ idRewards: 'treasure', numberRewardCorresponding: 1 }],
       emoji: '💰',
+      mainRewardId: 'treasure',
     },
     quran1: {
       id: 'quran1',
@@ -56,6 +61,7 @@ const initState = {
       validationRate: 3,
       listRewards: [{ idRewards: 'quran', numberRewardCorresponding: 1 }],
       emoji: '📙',
+      mainRewardId: 'quran',
     },
     quran2: {
       id: 'quran2',
@@ -65,6 +71,7 @@ const initState = {
       validationRate: 4,
       listRewards: [{ idRewards: 'quran', numberRewardCorresponding: 1 }],
       emoji: '📙',
+      mainRewardId: 'quran',
     },
   },
   rewards: {
