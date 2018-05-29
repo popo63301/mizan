@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import AdBanner from './AdBanner';
@@ -7,6 +7,8 @@ import NavigationBar from './NavigationBar';
 
 import France from '../../assets/svg/France';
 import USA from '../../assets/svg/UnitedStatesOfAmerica';
+
+import Github from '../../assets/svg/Github';
 
 const languages = [{ elem: France, id: 'fr' }, { elem: USA, id: 'en' }];
 
@@ -40,6 +42,34 @@ const OptionPage = ({ navigation, toggleLanguage }) => (
               <View>{React.createElement(e.elem)}</View>
             </TouchableOpacity>
           ))}
+        </View>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 80,
+          }}
+        >
+          <Text
+            style={{
+              color: 'black',
+              textAlign: 'center',
+              fontSize: 19,
+              fontFamily: 'Capriola-Regular',
+            }}
+          >
+            Contribute on github:
+          </Text>
+          <View style={{ marginLeft: 10 }}>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => Linking.openURL('https://github.com/Mizan-app/translation')}
+            >
+              <Github />
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </View>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StatusBar, Platform, View } from 'react-native';
+import { StatusBar, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { createStackNavigator } from 'react-navigation';
 import { AdMobInterstitial } from 'react-native-admob';
