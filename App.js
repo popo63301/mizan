@@ -5,6 +5,7 @@ import { AdMobInterstitial } from 'react-native-admob';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import IntlProvider from './src/containers/IntlProvider';
+import SplashScreen from './src/components/SplashScreen';
 import Router from './src/router';
 import { store, persistor } from './src/redux/configureStore';
 
@@ -38,7 +39,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate loading={<SplashScreen />} persistor={persistor}>
           <IntlProvider textComponent={Text}>
             <Router />
           </IntlProvider>
