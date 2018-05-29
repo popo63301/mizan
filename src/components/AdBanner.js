@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Platform, View } from 'react-native';
 import { AdMobBanner } from 'react-native-admob';
+import { withNavigation } from 'react-navigation';
 
 class AdBanner extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
+
   getAdUnitId = () => {
     const os = Platform.OS;
 
@@ -23,7 +28,7 @@ class AdBanner extends Component {
     const addUnitId = this.getAdUnitId();
 
     return (
-      <View style={{}}>
+      <View>
         <AdMobBanner
           adSize="fullBanner"
           adUnitID={addUnitId}
@@ -35,4 +40,4 @@ class AdBanner extends Component {
   }
 }
 
-export default AdBanner;
+export default withNavigation(AdBanner);

@@ -14,7 +14,7 @@ const NavigationBarContainer = styled.View`
 `;
 class NavigationBar extends Component {
   leftIconFunction = () => {
-    const { push, goBack } = this.props.history;
+    const { push, goBack } = this.props.navigation;
     if (this.props.isBack) {
       goBack();
     } else {
@@ -37,7 +37,7 @@ class NavigationBar extends Component {
   };
 
   renderRightIcon = () => {
-    const { push } = this.props.history;
+    const { push } = this.props.navigation;
     if (!this.props.isBack) {
       return (
         <TouchableOpacity activeOpacity={0.5} onPress={() => push('TotalPage')}>

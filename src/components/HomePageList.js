@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import HomePageListItem from '../containers/HomePageListItem';
 
-const HomePageList = ({ push, listHadithsIds }) => (
+const HomePageList = ({ navigation: { push }, listHadithsIds }) => (
   <View style={{ backgroundColor: 'rgba(57, 204, 204, 0.1)' }}>
     <View>
       {listHadithsIds.map((elem, key) => (
@@ -10,7 +10,7 @@ const HomePageList = ({ push, listHadithsIds }) => (
           hadithId={elem}
           key={key}
           onClick={() => {
-            push('/CounterPage', { hadithId: elem });
+            push('CounterPage', { hadithId: elem });
           }}
         />
       ))}

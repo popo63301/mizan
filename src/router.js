@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar, Platform, View } from 'react-native';
 import { connect } from 'react-redux';
-import { BackButton, NativeRouter, Route } from 'react-router-native';
+import { createStackNavigator } from 'react-navigation';
 import { AdMobInterstitial } from 'react-native-admob';
 
 import HomePage from './components/HomePage';
@@ -9,6 +9,16 @@ import CounterPage from './components/CounterPage';
 import OptionPage from './containers/OptionPage';
 import TotalPage from './components/TotalPage';
 import { reinitCounters } from './redux/actions/counter';
+
+const RouterStackNavigator = createStackNavigator(
+  {
+    HomePage: { screen: HomePage },
+    OptionPage: { screen: OptionPage },
+    CounterPage: { screen: CounterPage },
+    TotalPage: { screen: TotalPage },
+  },
+  { headerMode: 'none' },
+);
 
 class Router extends Component {
   componentDidMount() {
@@ -41,19 +51,7 @@ class Router extends Component {
   };
 
   render() {
-    return (
-      <NativeRouter>
-        <BackButton>
-          <View style={{ display: 'flex', flex: 1 }}>
-            {/* <Route exact path="/" component={OptionPage} /> */}
-            <Route exact path="/" component={HomePage} />
-            <Route path="/OptionPage" component={OptionPage} />
-            <Route path="/CounterPage" component={CounterPage} />
-            <Route path="/TotalPage" component={TotalPage} />
-          </View>
-        </BackButton>
-      </NativeRouter>
-    );
+    return <RouterStackNavigator />;
   }
 }
 

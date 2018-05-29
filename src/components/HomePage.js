@@ -25,13 +25,13 @@ class HomePage extends Component {
     console.log('HomePage will mount');
   }
   render() {
-    const { navigation, history } = this.props;
+    const { navigation } = this.props;
 
     return (
       <PageContainer>
-        <NavigationBar history={history} />
+        <NavigationBar navigation={navigation} />
         <ListContainer>
-          <HomePageList navigation={navigation} push={history.push} />
+          <HomePageList navigation={navigation} />
         </ListContainer>
         <AdBanner />
       </PageContainer>

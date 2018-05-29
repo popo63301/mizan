@@ -15,9 +15,9 @@ const ListContainer = styled.ScrollView`
   flex: 6;
 `;
 
-const TotalPage = ({ history }) => (
+const TotalPage = ({ navigation }) => (
   <Container>
-    <NavigationBar history={history} isBack />
+    <NavigationBar navigation={navigation} isBack />
     <ListContainer>
       <TotalPageList />
     </ListContainer>

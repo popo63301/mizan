@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import NavigationBar from './NavigationBar';
 import CounterDescription from '../containers/CounterDescription';
 import CounterButton from '../containers/CounterButton';
+import { reinitCounters } from '../redux/actions/counter';
 
 const PageContainer = styled.View`
   display: flex;
@@ -16,15 +17,15 @@ const CounterBlocksContainer = styled.View`
 `;
 
 const CounterPage = ({
-  history,
-  history: {
-    location: {
-      state: { hadithId },
+  navigation,
+  navigation: {
+    state: {
+      params: { hadithId },
     },
   },
 }) => (
   <PageContainer>
-    <NavigationBar history={history} isBack />
+    <NavigationBar navigation={navigation} isBack />
     <CounterBlocksContainer>
       <CounterDescription hadithId={hadithId} />
     </CounterBlocksContainer>
