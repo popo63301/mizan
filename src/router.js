@@ -10,6 +10,7 @@ const Router = () => (
   <NativeRouter>
     <BackButton>
       <View style={{ display: 'flex', flex: 1 }}>
+        {/* <Route exact path="/" component={OptionPage} /> */}
         <Route exact path="/" component={HomePage} />
         <Route path="/OptionPage" component={OptionPage} />
         <Route path="/CounterPage" component={CounterPage} />

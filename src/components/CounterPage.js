@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import NavigationBar from './NavigationBar';
 import CounterDescription from '../containers/CounterDescription';
 import CounterButton from '../containers/CounterButton';
 
@@ -15,6 +16,7 @@ const CounterBlocksContainer = styled.View`
 `;
 
 const CounterPage = ({
+  history,
   history: {
     location: {
       state: { hadithId },
@@ -22,6 +24,7 @@ const CounterPage = ({
   },
 }) => (
   <PageContainer>
+    <NavigationBar history={history} isBack />
     <CounterBlocksContainer>
       <CounterDescription hadithId={hadithId} />
     </CounterBlocksContainer>

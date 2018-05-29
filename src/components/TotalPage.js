@@ -8,6 +8,7 @@ const Container = styled.View`
   display: flex;
   flex-direction: column;
   flex: 1;
+  background: rgba(57, 204, 204, 0.2);
 `;
 
 const ListContainer = styled.ScrollView`

@@ -11,7 +11,7 @@ import USA from '../../assets/svg/UnitedStatesOfAmerica';
 const languages = [{ elem: France, id: 'fr' }, { elem: USA, id: 'en' }];
 
 const OptionPage = ({ history, toggleLanguage }) => (
-  <View style={{ backgroundColor: 'white', display: 'flex', flex: 1 }}>
+  <View style={{ backgroundColor: 'rgba(57,204,204,0.2)', display: 'flex', flex: 1 }}>
     <NavigationBar history={history} isBack />
     <View>
       <Text

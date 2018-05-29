@@ -8,6 +8,7 @@ import RewardImage from './RewardImage';
 const ItemContainer = styled.View`
   display: flex;
   flex-direction: row;
+  background: rgba(57, 204, 204, 0.1);
 `;
 
 const TextContainer = styled.View`

@@ -7,21 +7,22 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: rgba(57, 204, 204, 0.3);
+  background: rgba(57, 204, 204, 0.2);
 `;
 
 const ButtonContainer = styled.View`
   height: 200px;
   width: 200px;
-  background-color: #bbb;
+  background-color: #72c699;
   border-radius: 100;
   justify-content: center;
   align-items: center;
 `;
 
 const ButtonText = styled.Text`
-  font-size: 45px;
-  font-weight: bold;
+  color: white;
+  font-size: 72px;
+  font-family: Capriola-Regular;
 `;
 
 const CounterButton = ({ increaseCounter, hadithId }) => (

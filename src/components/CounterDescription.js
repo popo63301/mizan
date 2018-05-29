@@ -9,7 +9,7 @@ const CounterDescriptionContainer = styled.View`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: rgba(57, 204, 204, 0.1);
+  background: rgba(57, 204, 204, 0.2);
 `;
 
 const ModalButtonRow = styled.View`
@@ -25,8 +25,12 @@ const DescriptionRow = styled.View`
 `;
 
 const DescriptionText = styled.Text`
-  font-size: 20px;
+  color: black;
+  font-size: 18px;
   text-align: center;
+  font-family: Capriola-Regular;
+  margin-left: 15px;
+  margin-right: 15px;
 `;
 
 const RewardsRow = styled.View`
@@ -44,10 +48,11 @@ const CurrentProgressContainer = styled.View`
 `;
 
 const CurrentProgressText = styled.Text`
+  color: black;
   padding-right: 10px;
   font-size: 20px;
-  font-weight: bold;
   text-align: right;
+  font-family: Capriola-Regular;
 `;
 
 class CounterDescription extends Component {

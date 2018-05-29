@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import RewardImage from './RewardImage';
 
 const Container = styled.View`
   display: flex;
@@ -8,21 +10,21 @@ const Container = styled.View`
   flex: 1;
 `;
 const TotalRewardText = styled.Text`
-  flex: 1;
-  padding-left: 10px;
   font-size: 20px;
-  font-weight: bold;
+  font-family: Capriola-Regular;
+  color: black;
 `;
 
 class CounterRewardBox extends Component {
   getTotalReward = (e) => {
-    const { emojis, counterValue, hadith } = this.props;
+    const { counterValue, hadith } = this.props;
     const totalReward =
       Math.trunc(counterValue / hadith.validationRate) * e.numberRewardCorresponding;
     return (
-      <TotalRewardText>
-        {totalReward}x {emojis[e.idRewards]}
-      </TotalRewardText>
+      <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
+        <TotalRewardText>{totalReward}x</TotalRewardText>
+        <RewardImage idReward={e.idRewards} height={20} width={20} />
+      </View>
     );
   };
 

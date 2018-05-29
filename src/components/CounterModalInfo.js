@@ -4,13 +4,11 @@ import { FormattedMessage } from 'react-intl';
 import Modal from 'react-native-modal';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Icon from '../../assets/svg/Icon';
 
 const HadithContainer = styled.View`
   margin-left: 10%;
   margin-right: 10%;
-`;
-const ModalButton = styled.Text`
-  font-size: 30px;
 `;
 
 const ModalContentView = styled.View`
@@ -18,15 +16,18 @@ const ModalContentView = styled.View`
   background-color: white;
   justify-content: center;
   align-items: center;
+  border-radius: 13px;
 `;
 const QuitButtonView = styled.View`
   border-radius: 4;
-  background-color: #001f3f;
+  background-color: #72c699;
 `;
 
 const QuitButtonText = styled.Text`
   padding: 20px;
-  color: #7fdbff;
+  color: white;
+  font-size: 13px;
+  font-family: Capriola-Regular;
 `;
 class CounterModalInfo extends Component {
   state = {
@@ -42,22 +43,35 @@ class CounterModalInfo extends Component {
     return (
       <View>
         <TouchableOpacity onPress={this.toggleModal}>
-          <ModalButton>ℹ️</ModalButton>
+          <View style={{ marginTop: 13, marginRight: 15 }}>
+            <Icon />
+          </View>
         </TouchableOpacity>
         <Modal
-          visible={this.state.isModalVisible}
+          backdropColor="black"
+          backdropOpacity={0.7}
+          isVisible={this.state.isModalVisible}
           onBackdropPress={this.toggleModal}
           onBackButtonPress={this.toggleModal}
         >
           <ModalContentView>
             <HadithContainer>
-              <Text>
+              <Text
+                style={{
+                  fontFamily: 'Capriola-Regular',
+                  fontSize: 13,
+                  color: 'black',
+                  marginBottom: 35,
+                }}
+              >
                 <FormattedMessage id={hadith} />
               </Text>
             </HadithContainer>
             <TouchableOpacity onPress={this.toggleModal}>
               <QuitButtonView>
-                <QuitButtonText>D'accord!</QuitButtonText>
+                <QuitButtonText>
+                  <FormattedMessage id="counterPage.modal.okButton" />
+                </QuitButtonText>
               </QuitButtonView>
             </TouchableOpacity>
           </ModalContentView>

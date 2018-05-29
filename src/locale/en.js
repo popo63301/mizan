@@ -50,6 +50,7 @@ Le Prophète ( صلى الله عليه و سلم) a dit: « Il fait 100 tasbîh
   'reward.quran.title': 'Quran',
   'option.selectLanguage': 'Select a language',
   'totalPage.title': 'Rewards',
+  'counterPage.modal.okButton':'Ok'
 };
 
 export default en;
