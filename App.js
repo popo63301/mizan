@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, Platform } from 'react-native';
+import { Text, StatusBar, Platform } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { AdMobInterstitial } from 'react-native-admob';
@@ -21,7 +21,8 @@ const store = createStore(appStore, initState);
 
 class App extends Component {
   componentDidMount() {
-    //this.showInterstitial();
+    // this.showInterstitial();
+    StatusBar.setBackgroundColor('#528D6D');
   }
 
   showInterstitial = () => {
