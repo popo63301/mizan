@@ -1,1 +1,3 @@
 export const INCREASE_BUTTON = 'INCREASE_BUTTON';
+
+export const REINIT_COUNTERS = 'REINIT_COUNTERS';

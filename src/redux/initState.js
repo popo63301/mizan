@@ -127,6 +127,7 @@ const initState = {
     quran1: 0,
     quran2: 0,
   },
+  date: 0,
 };
 
 export default initState;
