@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
 import { Text, StatusBar, Platform } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { AdMobInterstitial } from 'react-native-admob';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import IntlProvider from './src/containers/IntlProvider';
-import appStore from './src/redux/reducers';
-import initState from './src/redux/initState';
 import Router from './src/router';
-
-const store = createStore(appStore, initState);
-
-// function chouf() {
-//   console.log(store.getState());
-//   // var okay = store.getState()
-//   // console.log(okay.decks.byId[2])
-// }
-
-// store.subscribe(chouf);
+import { store, persistor } from './src/redux/configureStore';
 
 class App extends Component {
   componentDidMount() {
@@ -49,9 +38,11 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <IntlProvider textComponent={Text}>
-          <Router />
-        </IntlProvider>
+        <PersistGate loading={null} persistor={persistor}>
+          <IntlProvider textComponent={Text}>
+            <Router />
+          </IntlProvider>
+        </PersistGate>
       </Provider>
     );
   }
