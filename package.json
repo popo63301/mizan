@@ -1,6 +1,8 @@
 {
-  "name": "mizan",
-  "version": "0.0.1",
+  "name": "Mizan",
+  "version": "1.0.1",
+  "description": "The app that will make you earn hassanats",
+  "author": "Sofiane Baddag",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -50,12 +52,11 @@
   "jest": {
     "preset": "react-native",
     "moduleNameMapper": {
-      "styled-components": "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
+      "styled-components":
+        "<rootDir>/node_modules/styled-components/dist/styled-components.native.cjs.js"
     }
   },
   "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
+    "assets": ["./assets/fonts/"]
   }
 }

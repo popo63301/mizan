@@ -6,4 +6,4 @@ YellowBox.ignoreWarnings([
   'Module RCTImageLoader',
   'Remote debugger',
 ]);
-AppRegistry.registerComponent('mizan', () => App);
+AppRegistry.registerComponent('Mizan', () => App);
