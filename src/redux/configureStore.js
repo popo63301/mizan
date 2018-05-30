@@ -11,7 +11,7 @@ const persistConfig = {
   version: 1,
   storage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['counters', 'date'],
+  whitelist: ['counters', 'date', 'locale'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
